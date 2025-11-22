@@ -79,7 +79,7 @@ export function VideoWorkspace({
       {/* Header */}
       <header className="shrink-0 flex items-center justify-between p-4 border-b-2 border-border bg-background z-10">
         <div className="flex items-center gap-4">
-          <Link href={`/${chatId}`}>
+          <Link href={`/chat/${chatId}`}>
             <Button
               variant="ghost"
               size="icon"

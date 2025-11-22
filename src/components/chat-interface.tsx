@@ -49,7 +49,7 @@ export function ChatInterface({ chatId, initialMessages }: ChatInterfaceProps) {
       const data = await response.json();
 
       // Immediately redirect to the video page
-      router.push(`/${chatId}/${data.videoId}`);
+      router.push(`/chat/${chatId}/${data.videoId}`);
     } catch (error) {
       console.error("Error generating video:", error);
       setIsGeneratingVideo(false);
@@ -66,9 +66,9 @@ export function ChatInterface({ chatId, initialMessages }: ChatInterfaceProps) {
       await handleGenerateVideo(input);
       setInput("");
     } else {
-      // Send message using AI SDK's sendMessage
-      sendMessage({ text: input });
-      setInput("");
+    // Send message using AI SDK's sendMessage
+    sendMessage({ text: input });
+    setInput("");
     }
   };
 
@@ -222,7 +222,7 @@ export function ChatInterface({ chatId, initialMessages }: ChatInterfaceProps) {
                   {isGeneratingVideo ? (
                     <Loader2 className="w-3 h-3 animate-spin" />
                   ) : (
-                    <Video className="w-3 h-3" />
+                  <Video className="w-3 h-3" />
                   )}
                   {isGeneratingVideo ? "Generating..." : isGenerateVideo ? "Video: ON" : "Generate video"}
                 </Button>
