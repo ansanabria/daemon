@@ -29,7 +29,7 @@ export async function POST(req: Request) {
   });
 
   const result = streamText({
-    model: openrouter.chat("x-ai/grok-4.1-fast:free"),
+    model: openrouter.chat("openai/gpt-oss-safeguard-20b"),
     system: "You are a helpful AI assistant named Daemon.",
     messages: coreMessages,
     onFinish: async ({ text }) => {
